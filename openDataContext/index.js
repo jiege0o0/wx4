@@ -14,8 +14,8 @@ const util = require("util.js");
  * 之后可通过assets.引用名方式进行获取
  */
 const assetsUrl = {
-  scorebg: "openDataContext/assets/scorebg.png",
-  star2: "openDataContext/assets/chapter_star3.png",
+  // scorebg: "openDataContext/assets/scorebg.png",
+  // star2: "openDataContext/assets/chapter_star3.png",
   button1: "openDataContext/assets/page_last.png",
   button2: "openDataContext/assets/page_next.png"
 };
@@ -75,7 +75,7 @@ function init() {
 	canvasHeight = data.windowHeight;
 
 	wx_scale = stageWidth/640
-	rankWidth =  getV(560);
+	rankWidth =  getV(540);
 	
 	barWidth = rankWidth;
 	barHeight = getV(100);
@@ -89,11 +89,11 @@ function init() {
 
 	
 	//按钮绘制数据初始化
-	buttonWidth = getV(114*1.4);
-	buttonHeight = getV(50*1.4);
+	buttonWidth = getV(150);
+	buttonHeight = getV(60);
 	buttonOffset = rankWidth / 2;
-	lastButtonX = buttonOffset - buttonWidth - getV(50);
-	nextButtonX = buttonOffset + getV(50);
+	lastButtonX = buttonOffset - buttonWidth - getV(100);
+	nextButtonX = buttonOffset + getV(100);
 	
 	
 }
@@ -103,7 +103,7 @@ function init() {
  */
 function drawButton() {
 
-	nextButtonY = lastButtonY = rankHeight - buttonHeight-5; 
+	nextButtonY = lastButtonY = rankHeight - buttonHeight-20; 
 
   if(page < Math.ceil(totalGroup.length/perPageMaxNum) - 1){
 	// context.fillStyle = "#414A5A";
@@ -136,9 +136,9 @@ function drawByData(data, i) {
 // console.log(data,i)
 let x = startX;
   //绘制底框
-  let color = i%2 == 0 ? "#b47c39" : "#A8671C";
-  context.fillStyle = color; //data.isMe ? "#332500" : "#272727";
-  context.fillRect(startX, startY + i * preOffsetY, barWidth, barHeight);
+  let color = "#8C8C8C";
+  context.fillStyle = color; 
+  context.fillRect(startX, startY + (i+1) * preOffsetY-2, barWidth, 2);
 
   x += getV(40);
   //设置字体
@@ -164,7 +164,7 @@ let x = startX;
   //绘制昵称
    x += avatarSize + getV(10);
   context.textAlign = "left";
-  fontSize = getV(22);
+  fontSize = getV(24);
   textOffsetY = (barHeight + fontSize) / 2;
   context.font = fontSize + "px Arial";
   context.fillStyle = "#FFFFFF";
@@ -172,11 +172,11 @@ let x = startX;
  
 
   //绘制球球背景
-  x = barWidth - getV(230);
-  context_drawImage(assets.scorebg, x, startY + i * preOffsetY + (barHeight - getV(50)) / 2, getV(220), getV(50));
+  // x = barWidth - getV(230);
+  // context_drawImage(assets.scorebg, x, startY + i * preOffsetY + (barHeight - getV(50)) / 2, getV(220), getV(50));
   
-  x = barWidth - getV(225);
-	context_drawImage(assets.star2, x, startY + i * preOffsetY + (barHeight - getV(46)) / 2, getV(46), getV(46));
+  // x = barWidth - getV(225);
+	// context_drawImage(assets.star2, x, startY + i * preOffsetY + (barHeight - getV(46)) / 2, getV(46), getV(46));
   
   //绘制球球
   // if(data.skin){ //兼容老代码，没有skin
@@ -525,20 +525,20 @@ function requestData(mainData, fun){
 			//{"key":score,"value":exp#level}
 			//]
 			// if(mainData.debug_log) console.log("getFriendCloudStorage=", JSON.stringify(res));
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
 	
 			totalGroup = [];
 			for(var i = 0; i < res.data.length; i++){
@@ -589,14 +589,14 @@ function requestData(mainData, fun){
 				// {
 					// totalGroup[i].level += '%'
 				// }
-				// else if(clientData.key == 'level')
-				// {
-					totalGroup[i].level = ''+totalGroup[i].level+'个'
-				// }
-				// else
-				// {
-					// totalGroup[i].level = util.addNumSeparator(totalGroup[i].level,2);
-				// }
+				if(clientData.key == 'level')
+				{
+					totalGroup[i].level = '第 '+totalGroup[i].level+' 关'
+				}
+				else
+				{
+					totalGroup[i].level = util.getStringBySecond(totalGroup[i].level).substr(-5);
+				}
 			}
 
 			// console.log(totalGroup);

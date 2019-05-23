@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
 	var max = 50;
   var result = await db.collection(rankKey).orderBy('value', 'desc').limit(max).get();
   var arr = result.data;
-  if(arr.length < max || arr[max-1].value < event.value)//要更新
+  if(event.value && event.nick &&(arr.length < max || arr[max-1].value < event.value))//要更新
   {
 	  var newData = {
 				value:event.value,

@@ -67,6 +67,28 @@ const Util = {
         }
         return data;
     },
+	
+	 getStringBySecond:(value)=> {
+        if(value < 0)
+            value = 0;
+        var hour = Math.floor(value / 3600);
+        var minute = Math.floor((value % 3600) / 60);
+        var second = Math.floor(value % 60);
+        var msg = "";
+
+        var h = "" + hour;
+        if(h.length < 2)
+            h = "0" + h;
+        msg += h;
+        var m = "0" + minute;
+        m = m.substr(m.length - 2,2);
+        msg += ":" + m;
+        var s = "0" + second;
+        s = s.substr(s.length - 2,2);
+        msg += ":" + s;
+
+        return msg;
+    },
 
 	addNumSeparator:(num,len)=>{
         var s = String(num);
