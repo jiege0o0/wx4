@@ -525,20 +525,20 @@ function requestData(mainData, fun){
 			//{"key":score,"value":exp#level}
 			//]
 			// if(mainData.debug_log) console.log("getFriendCloudStorage=", JSON.stringify(res));
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
-			res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
+			// res.data.push(JSON.parse(JSON.stringify(res.data[0])))
 	
 			totalGroup = [];
 			for(var i = 0; i < res.data.length; i++){
